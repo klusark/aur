@@ -1,0 +1,29 @@
+# Maintainer: Joel Teichroeb <joel@teichroeb.net>
+
+pkgname=orbital-git
+pkgver=20140110
+pkgrel=1
+pkgdesc="A Wayland shell client"
+arch=(i686 x86_64)
+url="https://github.com/giucam/orbital"
+license=('LGPL')
+depends=('weston-git' 'nuclear-git' 'qt5-tools')
+makedepends=('git' 'cmake')
+source=(git://github.com/giucam/orbital.git)
+sha1sums=('SKIP')
+
+build() {
+	cd orbital
+	mkdir build
+	cd build
+
+	cmake ..
+	make
+}
+
+package() {
+	cd orbital
+	cd build
+
+	make DESTDIR=${pkgdir} install
+}
