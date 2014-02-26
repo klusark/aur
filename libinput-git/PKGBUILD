@@ -2,13 +2,13 @@
 
 pkgname=libinput-git
 pkgver=r341.bc06973
-pkgrel=1
+pkgrel=2
 pkgdesc='A library to handle input devices in Wayland compositors'
 arch=(i686 x86_64)
 url='http://freedesktop.org/wiki/Software/libinput/'
 provides=("libinput=${pkgver}")
 license=('MIT')
-depends=('mtdev' 'udev')
+depends=('mtdev' 'udev' 'libevdev')
 makedepends=('git')
 source=(git://anongit.freedesktop.org/wayland/libinput)
 sha1sums=('SKIP')
